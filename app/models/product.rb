@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  default_scope {order('title')}
   #can't be empty
   validates :title, :description, :image_url, :presence => true
   #price must greater or equal to 0.01, db only keep 2 degital,don't set 0.001
